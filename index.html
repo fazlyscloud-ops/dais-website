@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DAIS Technology | Automation and Intelligent Solution</title>
+<style>
+:root{--bg:#f7f9fc;--surface:#fff;--ink:#0b1b33;--muted:#5a6b85;--line:#dfe6f0;--brand:#0a6cff;--accent:#00b894;--hero1:#0b1b33;--hero2:#123b78;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1220;--surface:#111c30;--ink:#eaf1fb;--muted:#9bb0cc;--line:#1f2f4a;--brand:#4d9aff;--accent:#2ee6b8;--hero1:#050b16;--hero2:#0e2c5c}}
+:root[data-theme="dark"]{--bg:#0a1220;--surface:#111c30;--ink:#eaf1fb;--muted:#9bb0cc;--line:#1f2f4a;--brand:#4d9aff;--accent:#2ee6b8;--hero1:#050b16;--hero2:#0e2c5c}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.3rem;letter-spacing:.04em}.logo b{color:var(--brand)}
+nav{display:flex;gap:22px;font-size:.92rem;color:var(--muted);flex-wrap:wrap}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--brand);color:#fff;font-weight:600;font-size:.95rem}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.4)}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:96px 0 88px}
+.eyebrow{color:var(--accent);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.9rem);line-height:1.08;margin:14px 0 18px;max-width:780px}
+.hero p{max-width:600px;color:#c5d4ea;font-size:1.1rem}
+.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-40px;position:relative}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.stat b{display:block;font-size:1.8rem;color:var(--brand)}.stat span{color:var(--muted);font-size:.85rem}
+section{padding:80px 0}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin:8px 0 12px;line-height:1.2}
+.lead{color:var(--muted);max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:36px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--brand)}
+.card i{font-style:normal;font-size:1.6rem}
+.card h3{margin:12px 0 6px;font-size:1.1rem}.card p{margin:0;color:var(--muted);font-size:.93rem}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 20px}
+.tab{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem}
+.tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.panel{display:none;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:28px}
+.panel.on{display:block}.panel h3{margin-top:0}.panel ul{color:var(--muted);padding-left:20px;margin:0}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:36px}
+.why div{border-left:3px solid var(--accent);padding-left:16px}.why h3{margin:0 0 4px;font-size:1.05rem}.why p{margin:0;color:var(--muted);font-size:.93rem}
+.contact{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;text-align:center;border-radius:20px;padding:56px 24px}
+.contact p{color:#c5d4ea;max-width:520px;margin:0 auto 24px}
+.more{display:inline-block;margin-top:14px;color:var(--brand);font-weight:600;font-size:.9rem}
+.more:hover{text-decoration:underline}
+.jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px}
+.job{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.job h3{margin:0 0 4px;font-size:1.05rem}.job small{color:var(--muted)}
+.perks{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.perks span{border:1px solid var(--line);background:var(--bg);padding:8px 16px;border-radius:999px;font-size:.88rem;color:var(--muted)}
+footer{padding:36px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){nav{display:none}.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 72px}section{padding:56px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#top">DAIS<b>.</b> Technology</a>
+<nav><a href="#services">Services</a><a href="#industries">Industries</a><a href="#why">Why DAIS</a><a href="#careers">Careers</a><a href="#contact">Contact</a></nav>
+<a class="btn" href="#contact">Get in touch</a></div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div class="eyebrow">Automation and Intelligent Solution</div>
+<h1>Making business smarter with automation and AI.</h1>
+<p>DAIS Technology builds intelligent software that removes manual work, connects your systems and turns your data into decisions.</p>
+<div class="cta"><a class="btn" href="#contact">Talk to our team</a><a class="btn ghost" href="#services">Explore services</a><a class="btn ghost" href="#why">Learn more</a></div>
+</div></div>
+
+<div class="wrap stats">
+<div class="stat"><b>Since 2004</b><span>22+ years in the industry</span></div>
+<div class="stat"><b>AI-first</b><span>Built into every solution</span></div>
+<div class="stat"><b>Fast</b><span>Pilots in weeks</span></div>
+<div class="stat"><b>Local + global</b><span>Sri Lanka based</span></div>
+</div>
+
+<section id="services"><div class="wrap">
+<div class="eyebrow">What we do</div><h2>Solutions that work while you sleep</h2>
+<p class="lead">From a single automated workflow to a full intelligent platform, we design, build and run technology around your goals.</p>
+<div class="grid">
+<div class="card"><i>⚙️</i><h3>Process Automation</h3><p>Workflow, RPA and back-office automation that cuts cost and errors.</p><a class="more" href="#contact">Learn more →</a></div>
+<div class="card"><i>🧠</i><h3>AI &amp; Analytics</h3><p>Machine learning, chatbots and dashboards that turn data into action.</p><a class="more" href="#contact">Learn more →</a></div>
+<div class="card"><i>💻</i><h3>Software Engineering</h3><p>Custom web and mobile applications built to scale with you.</p><a class="more" href="#contact">Learn more →</a></div>
+<div class="card"><i>🔗</i><h3>Cloud &amp; Integration</h3><p>Connect ERP, CRM and legacy systems securely in the cloud.</p><a class="more" href="#contact">Learn more →</a></div>
+</div></div></section>
+
+<section class="alt" id="industries"><div class="wrap">
+<div class="eyebrow">Industries</div><h2>Intelligent software for your industry</h2>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true" data-t="0">Banking &amp; Finance</button>
+<button class="tab" role="tab" aria-selected="false" data-t="1">Manufacturing</button>
+<button class="tab" role="tab" aria-selected="false" data-t="2">Retail &amp; Distribution</button>
+<button class="tab" role="tab" aria-selected="false" data-t="3">Telecom &amp; Services</button>
+</div>
+<div class="panel on"><h3>Banking &amp; Finance</h3><ul><li>Automated onboarding and document processing</li><li>Fraud and risk analytics</li><li>Customer service assistants</li></ul><a class="more" href="#contact">Learn more →</a></div>
+<div class="panel"><h3>Manufacturing</h3><ul><li>Production and inventory automation</li><li>Predictive maintenance</li><li>Quality tracking dashboards</li></ul><a class="more" href="#contact">Learn more →</a></div>
+<div class="panel"><h3>Retail &amp; Distribution</h3><ul><li>Demand forecasting and stock planning</li><li>Order and delivery automation</li><li>Personalised customer experiences</li></ul><a class="more" href="#contact">Learn more →</a></div>
+<div class="panel"><h3>Telecom &amp; Services</h3><ul><li>Billing and support workflow automation</li><li>Field service scheduling</li><li>Usage insight and churn prediction</li></ul><a class="more" href="#contact">Learn more →</a></div>
+</div></section>
+
+<section id="why"><div class="wrap">
+<div class="eyebrow">Why DAIS</div><h2>Two decades of building technology that lasts</h2>
+<p class="lead">Since 2004 we have helped organisations move from manual, disconnected work to automated, intelligent operations. That experience shapes every project we take on.</p>
+<div class="why">
+<div><h3>Proven since 2004</h3><p>Over 20 years of delivery across industries means we have seen the problems before and know what works.</p></div>
+<div><h3>Practical first</h3><p>We start with your problem, then choose the right tool, not the trendiest one.</p></div>
+<div><h3>Secure by design</h3><p>Privacy, security and reliability are built in from day one.</p></div>
+<div><h3>Deep industry knowledge</h3><p>Our teams understand banking, manufacturing, retail and telecom, not just code.</p></div>
+<div><h3>Built to scale</h3><p>Solutions that start small and grow with your business without a rebuild.</p></div>
+<div><h3>Partners, not vendors</h3><p>Ongoing support and improvement long after launch.</p></div>
+</div></div></section>
+
+<section class="alt" id="careers"><div class="wrap">
+<div class="eyebrow">Careers</div><h2>Build intelligent solutions with us</h2>
+<p class="lead">Join a team that has been shaping automation and AI since 2004. We value curiosity, ownership and learning.</p>
+<div class="jobs">
+<div class="job"><div><h3>Software Engineer</h3><small>Full-time · Engineering</small></div><a class="more" href="#contact">Learn more →</a></div>
+<div class="job"><div><h3>AI / Data Engineer</h3><small>Full-time · AI &amp; Analytics</small></div><a class="more" href="#contact">Learn more →</a></div>
+<div class="job"><div><h3>QA Engineer</h3><small>Full-time · Quality</small></div><a class="more" href="#contact">Learn more →</a></div>
+<div class="job"><div><h3>Internship</h3><small>Students &amp; graduates</small></div><a class="more" href="#contact">Learn more →</a></div>
+</div>
+<div class="perks"><span>Learning and growth</span><span>Real project ownership</span><span>Friendly team culture</span><span>Work with AI and automation</span></div>
+<p style="margin-top:26px"><a class="btn" href="mailto:careers@example.com">Send your CV</a></p>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="contact">
+<h2>Ready to automate?</h2>
+<p>Tell us what slows your team down and we will show you what intelligent automation can do.</p>
+<a class="btn" href="mailto:info@example.com">Email us</a>
+</div></div></section>
+
+<footer><div class="wrap foot"><span><b>DAIS Technology</b> · Automation and Intelligent Solution</span><span>© 2026 DAIS Technology · Since 2004. All rights reserved.</span></div></footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected','false')});
+b.setAttribute('aria-selected','true');
+document.querySelectorAll('.panel').forEach(function(p,i){p.classList.toggle('on',i==b.dataset.t)});});});
+</script>
+</body>
+</html>
